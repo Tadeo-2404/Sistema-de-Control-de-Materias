@@ -70,48 +70,19 @@
             </div>
         </div>
         <div class="grid grid-cols-3 p-4 gap-8">
-            <div class="bg-gray-100 p-4 text-left">
-                <div class="flex items-center gap-4">
+            @foreach ($testimonios as $testimonio)
+              <div class="bg-gray-100 p-4 text-left">
+                 <div class="flex items-center gap-4">
                     <div>
-                        <img src="/images/testimonial-1.webp" alt="testimonio" class="rounded-full w-20 h-20">
+                        <h3 class="font-semibold text-2xl">{{$testimonio['nombre']}} {{$testimonio['apellido']}}  </h3>
+                        <p class="font-thim"> {{$testimonio['universidad']}}  </p>
                     </div>
-                    <div>
-                        <h3 class="font-semibold text-2xl">Daniela Garcia</h3>
-                        <p class="font-thim">Estudiante UVM</p>
-                    </div>
-                </div>
-                <div>
-                    <p class="mt-5">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error a maiores velit laboriosam quidem ullam mollitia nisi delectus repellendus esse?</p>
-                </div>
-            </div>
-            <div class="bg-gray-100 p-4 text-left">
-                <div class="flex items-center gap-4">
-                    <div>
-                        <img src="/images/testimonial-2.webp" alt="testimonio" class="rounded-full w-20 h-20">
-                    </div>
-                    <div>
-                        <h3 class="font-semibold text-2xl">Derreck Gonzalez</h3>
-                        <p class="font-thim">Estudiante UDG</p>
-                    </div>
-                </div>
-                <div>
-                    <p class="mt-5">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error a maiores velit laboriosam quidem ullam mollitia nisi delectus repellendus esse?</p>
-                </div>
-            </div>
-            <div class="bg-gray-100 p-4 text-left">
-                <div class="flex items-center gap-4">
-                    <div>
-                        <img src="/images/testimonial-3.webp" alt="testimonio" class="rounded-full w-20 h-20">
-                    </div>
-                    <div>
-                        <h3 class="font-semibold text-2xl">Fabiola Gomez</h3>
-                        <p class="font-thim">Estudiante UAG</p>
-                    </div>
-                </div>
-                <div>
-                    <p class="mt-5">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error a maiores velit laboriosam quidem ullam mollitia nisi delectus repellendus esse?</p>
-                </div>
-            </div>
+                 </div>
+                 <div>
+                     <p class="mt-5">{{$testimonio['descripcion']}} </p>
+                 </div>
+              </div>
+            @endforeach
         </div>
     </div>
 </div>
