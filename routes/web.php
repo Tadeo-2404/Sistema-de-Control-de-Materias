@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\TestimoniosController;
 use Illuminate\Support\Facades\Route;
+use App\Models\Testimonios;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,9 +15,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function() {
-    return view('pagina-principal');
-});
+// COMMON RESOURCE ROUTES
+// index - Show all elements
+// show - Show single element
+// create -
+
+Route::get('/', [TestimoniosController::class, 'index']);
 
 Route::get('/iniciar-sesion', function () {
     return view('iniciar-sesion');
