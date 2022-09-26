@@ -3,7 +3,6 @@
 use App\Http\Controllers\TestimoniosController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
-use App\Models\Testimonios;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,10 +20,8 @@ use App\Models\Testimonios;
 // show - Show single element
 // create -
 
-Route::get('/', function() {
-    return view('pagina-principal');
-});
-
+=======
+Route::get('/', [TestimoniosController::class, 'index']);
 
 Route::get('/iniciar-sesion', function () {
     return view('iniciar-sesion');
