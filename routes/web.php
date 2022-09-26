@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\TestimoniosController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
+use App\Models\Testimonios;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,17 +16,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// COMMON RESOURCE ROUTES
+// index - Show all elements
+// show - Show single element
+// create -
+
 Route::get('/', function() {
     return view('pagina-principal');
 });
+
 
 Route::get('/iniciar-sesion', function () {
     return view('iniciar-sesion');
 });
 
-Route::get('/registrarse', function() {
-    return view('registrarse');
-});
+Route::get('/registrarse', [UserController::class, 'registrarse']);
+Route::post('/registrarse', [UserController::class, 'store']);
 
 Route::get('/eliminar-cuenta', function() {
     return view('eliminar-cuenta');
@@ -32,4 +40,3 @@ Route::get('/eliminar-cuenta', function() {
 Route::get('/recuperar-contraseña', function() {
     return view('recuperar-contraseña');
 });
-
